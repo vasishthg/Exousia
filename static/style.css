@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'sfpro-semibold';
+    src: url('fonts/SF-Pro-Text-Semibold.otf');
+}
+
+body{
+    background: url('bg.svg');
+    font-family: 'Red Hat Display';
+    background-size: auto;
+    overflow: hidden;
+}
+
+.app{
+    width: 25em;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: auto;
+    top: 0;
+    background-color: white;
+}
+
+.topbar{
+    margin-left: 2em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    z-index: 239482945000;
+}
+
+.topbar-stats{
+    display: inline;
+    position: relative;
+    z-index: 239482945000;
+    right: 0;
+    vertical-align: middle;
+    float: right;
+}
+
+.topbar-stat{
+    margin-right: 0.3em;
+    fill: white !important;
+    max-width: 1.2em;
+    z-index: 239482945000;
+    user-select: none;
+    pointer-events: none;
+
+}
+
+.topbar-statpath{
+    fill: black ;
+}
+
+.topbar-time{
+    font-family: 'sfpro-semibold';
+    display: inline;
+    position: relative;
+    font-weight: 900;
+    z-index: 2394829450010;
+}
+
+::selection{
+    background-color: #00FFB2;
+    color: #141414; 
+}
+
+.signup{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    overflow-y: auto;
+    z-index: 0;
+    color: white;
+    background-color: #141414;
+    display: none;
+}
+
+.backbtn{
+    width: 3em;
+    font-weight: 900;
+    margin-left: 3em;
+    cursor: pointer;
+    border-radius: 1.3em;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    color: white;
+    background: #171717;
+    margin-top: 7em;
+    border: 2px solid #6A6A6A;  
+    display: inline;
+    margin-right: 2em;
+}
+
+.su-head{
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-top: -1.25em;
+}
+
+.signup-form{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.su-name{
+    color: white;
+}
+
+.su-input{
+    width: 93%;
+    height: 3.5em;
+    border: none;
+    outline: none;
+    background: #171717;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-family: 'Red Hat Display';
+    padding-left: 2em;
+    color: white;
+    margin-top: 0.5em;
+    border-radius: 0.6em;
+}
+
+.su-submit{
+    background-color: #00FFB2;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    font-family: 'Red Hat Display';
+    padding: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+    animation: nglowrev 0.5s 1 forwards;
+}
+
+@keyframes nglowrev {
+    0%{
+        filter: drop-shadow(0 0 0.3rem #00ffb2);
+        border-radius: 0.7em;
+    }
+    100%{
+        filter: drop-shadow(0 0 0 #00ffb2);
+        border-radius: 0;
+    }
+}
+
+.su-submit:hover{
+    animation: nglow 0.5s 1 forwards;
+}
+
+@keyframes nglow {
+    100%{
+        border-radius: 0.7em;
+        filter: drop-shadow(0 0 0.3rem #00ffb2);
+    }
+}
+
+.su-input:focus{
+    animation: suinputanim 0.5s 1 forwards ease-in-out;
+}
+
+@keyframes suinputanim {
+    100%{
+        filter: drop-shadow(0 0 0.2rem #00FFB2);
+        background-color: #141414;
+        border-radius: 1em;
+        border: 1px solid #00FFB2;
+    }
+}
+
+.authbtn{
+    width: 11em;
+    height: 4.5em;
+    background-color: #171717;
+    border: 1.8px solid white;
+    display: inline-block;
+    border-radius: 0.6em;
+    cursor: pointer;
+    margin-right: 3em;
+}
+
+#auth-google{
+    width: 11em;
+    height: 4.5em;
+    background-color: #171717;
+    border: 1.8px solid white;
+    display: inline-block;
+    border-radius: 0.6em;
+    cursor: pointer;
+    margin-right: 3em;
+}
+
+.login{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 0;
+    color: white;
+    background-color: #141414;
+    display: none;
+}
+
+.navbar{
+    position: fixed;
+    bottom: 0;
+    height: 1em;
+    width: 100%;
+    background-color: #141414;
+    padding-top: 2em;
+    padding-bottom: 2.75em;
+}
+
+.display-nav{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.display-head{
+    font-weight: 900;
+    font-family: 'Red Hat Display';
+    font-size: 1.2em;
+    display: inline;
+    letter-spacing: -0.5px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.display-img{
+    vertical-align: bottom;
+    float: right;
+    margin-right: 1em;
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exousía</title>
+    <meta name="google-signin-client_id" content="471058557292-11ibl5901v0195974rt4ufiiqvguc9mv.apps.googleusercontent.com">
+    <link rel="shortcut icon" href="{{url_for('static', filename='favn.svg')}}" type="image/x-icon">
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <div class="app">
+        <div class="topbar">
+            <p class="topbar-time">{{time}}</p>
+            <div class="topbar-stats">
+                <!-- Signal -->
+                <svg class="topbar-stat" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="topbar-statpath" fill-rule="evenodd" clip-rule="evenodd" d="M18.8039 0.499939H17.6373C16.9929 0.499939 16.4706 1.00362 16.4706 1.62494V11.3749C16.4706 11.9963 16.9929 12.4999 17.6373 12.4999H18.8039C19.4482 12.4999 19.9706 11.9963 19.9706 11.3749V1.62494C19.9706 1.00362 19.4482 0.499939 18.8039 0.499939ZM12.1471 3.12507H13.3137C13.9581 3.12507 14.4804 3.62875 14.4804 4.25007V11.3751C14.4804 11.9964 13.9581 12.5001 13.3137 12.5001H12.1471C11.5027 12.5001 10.9804 11.9964 10.9804 11.3751V4.25007C10.9804 3.62875 11.5027 3.12507 12.1471 3.12507ZM7.82353 5.74986H6.65686C6.01253 5.74986 5.4902 6.25354 5.4902 6.87486V11.3749C5.4902 11.9962 6.01253 12.4999 6.65686 12.4999H7.82353C8.46786 12.4999 8.9902 11.9962 8.9902 11.3749V6.87486C8.9902 6.25354 8.46786 5.74986 7.82353 5.74986ZM2.33333 7.99982H1.16667C0.522334 7.99982 0 8.5035 0 9.12482V11.3748C0 11.9961 0.522334 12.4998 1.16667 12.4998H2.33333C2.97767 12.4998 3.5 11.9961 3.5 11.3748V9.12482C3.5 8.5035 2.97767 7.99982 2.33333 7.99982Z" fill="black"/>
+                </svg>    
+                <!-- Connections -->
+                <svg class="topbar-stat" width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="topbar-statpath" fill-rule="evenodd" clip-rule="evenodd" d="M9.47105 2.84599C11.9376 2.8461 14.3098 3.81668 16.0975 5.55712C16.2321 5.69149 16.4472 5.68979 16.5798 5.55332L17.8666 4.2234C17.9337 4.15418 17.9711 4.06042 17.9706 3.96287C17.97 3.86531 17.9315 3.77201 17.8636 3.7036C13.1717 -0.901199 5.76966 -0.901199 1.07774 3.7036C1.00978 3.77196 0.971216 3.86523 0.970589 3.96279C0.969962 4.06034 1.00732 4.15413 1.0744 4.2234L2.36154 5.55332C2.49404 5.69 2.70937 5.6917 2.8439 5.55712C4.63174 3.81656 7.00425 2.84598 9.47105 2.84599ZM9.47103 7.17266C10.8262 7.17257 12.1331 7.68843 13.1377 8.61999C13.2735 8.7522 13.4876 8.74933 13.62 8.61353L14.9053 7.28361C14.973 7.21386 15.0105 7.11922 15.0096 7.02089C15.0086 6.92255 14.9691 6.82872 14.9001 6.76039C11.841 3.84629 7.10364 3.84629 4.04457 6.76039C3.97547 6.82872 3.93604 6.9226 3.93514 7.02097C3.93423 7.11933 3.97192 7.21396 4.03974 7.28361L5.32466 8.61353C5.4571 8.74933 5.67114 8.7522 5.80701 8.61999C6.8109 7.68905 8.11671 7.17323 9.47103 7.17266ZM12.0457 10.084C12.0476 10.1826 12.0098 10.2777 11.941 10.3468L9.71777 12.6445C9.6526 12.712 9.56374 12.75 9.47103 12.75C9.37831 12.75 9.28946 12.712 9.22429 12.6445L7.00064 10.3468C6.93195 10.2776 6.89416 10.1825 6.8962 10.0839C6.89823 9.98529 6.93992 9.89191 7.0114 9.82581C8.43127 8.59595 10.5108 8.59595 11.9307 9.82581C12.0021 9.89196 12.0437 9.98537 12.0457 10.084Z" fill="black"/>
+                </svg>                    
+                <!-- Battery -->
+                <svg class="topbar-stat" width="29" height="13" viewBox="0 0 29 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="topbar-statpath" opacity="0.4" x="1.47058" y="0.5" width="24" height="12" rx="3.5" stroke="black"/>
+                    <path class="topbar-statpath" opacity="0.5" d="M26.9706 4.5V8.5C27.7765 8.16122 28.3006 7.37313 28.3006 6.5C28.3006 5.62687 27.7765 4.83878 26.9706 4.5Z" fill="black"/>
+                    <rect class="topbar-statpath" x="2.97058" y="2" width="17" height="9" rx="2" fill="black"/>
+                </svg>                    
+            </div>
+        </div>
+        <div class="mainpage">
+            <!-- If loggedin -->
+           {% if 'loggedin' in session or 'token' in session %}
+           <br>
+           <div class="display-nav">
+            <h3 class="display-head">< Home</h3>
+            <img src="{{url_for('static', filename='notif.svg')}}" class="display-img">
+           </div>
+           <div class="nav">
+                <ul>
+                    <li class="navlist">
+                        <a href="">
+                            <span class="navicon"></span>
+                        </a>
+                    </li>
+                    <li class="navlist">
+                        <a href="">
+                            <span class="navicon"></span>
+                        </a>
+                    </li>
+                    <li class="navlist">
+                        <a href="">
+                            <span class="navicon"></span>
+                        </a>
+                    </li>
+                    <li class="navlist">
+                        <a href="">
+                            <span class="navicon"></span>
+                        </a>
+                    </li>
+                    <li class="navlist">
+                        <a href="">
+                            <span class="navicon"></span>
+                        </a>
+                    </li>
+                </ul>
+           </div>
+           <!-- Logged in -->
+           <!-- If not loggedin -->
+           {% else %}
+           <a href="#" class="to-signup">Signup</a>
+           <a href="#" class="to-login">Login</a>
+           not logged in 
+           {% endif %}
+            <!-- Signup/login -->
+            <div class="signup" id="signup">
+                <button class="backbtn to-home"><img src="{{url_for('static', filename='chevron_right.svg')}}"></button>
+                <h1 class="su-head">SIGN UP</h1>
+                <form action="" class="signup-form" method="post">
+                    <label for="su-name">Name</label><br>
+                    <input type="text" required name="su-name" placeholder="Enter your name" class="su-input" id=""><br><br>
+                    <label for="su-password">Password</label><br>
+                    <input type="password" required name="su-password" placeholder="Pick a strong password" class="su-input" id=""><br><br>
+                    <label for="su-email">Email</label><br>
+                    <input type="text" required name="su-email" placeholder="admin@exousía.com" class="su-input" id=""><br><br>
+                    <label for="su-nick">Nickname</label><br>
+                    <input type="text" required name="su-nick" placeholder="Choose your nickname" class="su-input" id=""><br><br>
+                    <input type="submit" value="Submit.." class="su-submit">
+                </form>
+                <center><h2>OR</h2>
+                <div class="su-authlogin">
+                    <!-- <button class="authbtn customGPlusSignIn" data-onsuccess="onSignIn" id="auth-google gSignInWrapper"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button> -->
+                    <button class="authbtn" onclick="iTried()" id="auth-google"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button>
+                    <a href="{{oauth_url}}"><button class="authbtn" id="auth-discord" style="margin-right:0;"><img src="{{url_for('static', filename='discord.svg')}}" alt=""></button></a>
+                </div>
+                <h5>Already have an account? <span style="color: rgb(1, 195, 1); cursor: pointer;">Log In</span></h5>
+            </center>
+            </div>
+            <!-- Login -->
+            <div class="login" id="login">
+                <button class="backbtn to-home"><img src="{{url_for('static', filename='chevron_right.svg')}}"></button>
+                <h1 class="su-head">LOG IN</h1>
+                <form action="" class="signup-form" method="post">
+                    <label for="lo-email">Email</label><br>
+                    <input type="text" required name="lo-email" placeholder="admin@exousía.com" class="su-input" id=""><br><br>
+                    <label for="lo-password">Password</label><br>
+                    <input type="password" required name="lo-password" placeholder="Enter password" class="su-input" id=""><br><br>
+                    <input type="submit" value="Submit.." class="su-submit">
+                </form>
+                <center><h2>OR</h2>
+                <div class="su-authlogin">
+                    <!-- <button class="authbtn customGPlusSignIn" data-onsuccess="onSignIn" id="auth-google gSignInWrapper"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button> -->
+                    <button class="authbtn" onclick="iTried()" id="auth-google"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button>
+                    <a href="{{oauth_url}}"><button class="authbtn" id="auth-discord" style="margin-right:0;"><img src="{{url_for('static', filename='discord.svg')}}" alt=""></button></a>
+                </div>
+                <h5>Dont have an account? <span style="color: rgb(1, 195, 1); cursor: pointer;">Sign Up</span></h5>
+            </center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Scripts -->
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
+<script
+  src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+  integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+  crossorigin="anonymous"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="/static/main.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
