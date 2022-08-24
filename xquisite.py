@@ -14,7 +14,7 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'toor'
 app.config['MYSQL_DB'] = 'exousía'
-db = mysql.connector.connect(host="localhost", user = "root", password = "toor", database = "exousía")
+# db = mysql.connector.connect(host="localhost", user = "root", password = "toor", database = "exousía")
 client = APIClient(TOKEN, client_secret=CLIENT_SECRET)
 mysql = MySQL(app)
 

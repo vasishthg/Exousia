@@ -48,6 +48,11 @@ $(".to-home").click(function(){
   }, delay)
 });
 
+$(".to-services").click(function(){
+  $(".services").show("slide", {direction: "down"}, 300)
+  document.getElementById("display-head").innerHTML = "< Services"
+})
+
 function iTried(){
   alert("I tried making google auth, couldnt make :(. discord auth works tho :)")
 }

@@ -219,12 +219,15 @@ body{
 .display-nav{
     margin-left: 1em;
     margin-right: 1em;
+    z-index: 3484;
+    position: relative;
 }
 
 .display-head{
     font-weight: 900;
     font-family: 'Red Hat Display';
     font-size: 1.2em;
+    cursor: pointer;
     display: inline;
     letter-spacing: -0.5px;
 }
@@ -255,4 +258,186 @@ body{
     vertical-align: bottom;
     float: right;
     margin-right: 1em;
+}
+
+.home-powerbg{
+    width: 100%;
+    z-index: -1;
+    margin-top: 1em;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+}
+
+.home-powerex{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1em;
+    letter-spacing: 0.03em;
+    font-weight: 800;
+    font-family: 'Red Hat Display';
+    color: #00FFB2;
+}
+
+.home-powertxt{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    margin-top: 5em;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+}
+
+.nav{
+    width: 100%;
+    height: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: url('navbg.svg');
+    position: fixed;
+    bottom: 0;
+}
+
+.navmain{
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-top: .75em;
+}
+
+.navlink{
+    margin-right: 2em;
+    max-width: 1.1em;
+    animation: navglowrev 0.3s 1 forwards;
+    display: inline;
+}
+
+.navlink:hover{
+    animation: navglow 0.4s 1 forwards;
+}
+
+@keyframes navglow {
+    100%{
+        filter: drop-shadow(2px 5px 0.1rem #00FFB2);
+        transform: translateY(-2%);
+    }
+}
+
+@keyframes navglowrev {
+    0%{
+        filter: drop-shadow(2px 5px 0.1rem #00FFB2);
+        transform: translateY(-2%);
+    }
+    100%{
+        filter: drop-shadow(0 0 0);
+        transform: translateY(0);
+    }
+}
+.navlink2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-60%);
+    bottom: 2em;
+    filter: drop-shadow(0 3px 0.2rem black);
+    animation: navsmootherev 0.3s 1 forwards;
+}
+
+.navlink2:hover{
+    animation: navsmoothe 0.3s 1 forwards;
+}
+
+@keyframes navsmoothe {
+    100%{
+        filter: drop-shadow(0 2px 0.2rem #000000);
+        bottom: 1.8em;
+    }
+}
+
+@keyframes navsmootherev {
+    0%{
+        filter: drop-shadow(0 2px 0.2rem #000000);
+        bottom: 1.8em;
+    }
+    100%{
+        filter: drop-shadow(0 3px 0.2rem black);
+        bottom: 2em;
+    }
+}
+.home-powerstats{
+    margin-top: 18em;
+    overflow-y: scroll;
+    z-index: -1;
+    height: 10em;
+}
+
+.home-powerstat{
+    margin-right: 2em;
+    margin-left: 2em;
+    background-color: #171717;
+    color: white;
+    height: 6em;
+    border-radius: 0.8em;
+    overflow: hidden;
+    margin-top: 1.5em;
+    padding: 1em 1em 1em 1em;
+}
+*{
+    overflow-x: hidden;
+}
+
+.powerstat-desc{
+    font-size: 0.7em;
+    margin-top: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.03rem;
+    margin-bottom: 0;
+}
+
+.powerstat-stat{
+    display: inline-block;
+}
+
+.powerstat-statdesc{
+    font-size: 0.8em;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 1em;
+}
+
+.powerstat-repro{
+    overflow: hidden;
+    float: right;
+}
+
+.powerstat-bg{
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.powerstat-percentage{
+    z-index: 3;
+    font-size: 1.2em;
+    font-weight: 700;
+    overflow: hidden;
+    padding-bottom: 2em;
+    margin-left: 0.9em;
+    margin-top: -2.8em;
+    color: white;
+}
+
+/* Services */
+
+.services{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    color: white;
+    display: none;
 }

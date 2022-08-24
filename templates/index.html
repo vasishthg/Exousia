@@ -37,39 +37,72 @@
            {% if 'loggedin' in session or 'token' in session %}
            <br>
            <div class="display-nav">
-            <h3 class="display-head">< Home</h3>
+            <h3 class="display-head" id="display-head">< Home</h3>
             <img src="{{url_for('static', filename='notif.svg')}}" class="display-img">
            </div>
-           <div class="nav">
-                <ul>
-                    <li class="navlist">
-                        <a href="">
-                            <span class="navicon"></span>
-                        </a>
-                    </li>
-                    <li class="navlist">
-                        <a href="">
-                            <span class="navicon"></span>
-                        </a>
-                    </li>
-                    <li class="navlist">
-                        <a href="">
-                            <span class="navicon"></span>
-                        </a>
-                    </li>
-                    <li class="navlist">
-                        <a href="">
-                            <span class="navicon"></span>
-                        </a>
-                    </li>
-                    <li class="navlist">
-                        <a href="">
-                            <span class="navicon"></span>
-                        </a>
-                    </li>
-                </ul>
+           <!-- Power -->
+           <h1 class="home-powerex">213.43kW</h1>
+           <p class="home-powertxt">Current Power</p>
+           <img src="{{url_for('static', filename='powerbg.svg')}}" class="home-powerbg" alt="">
+           <div class="home-powerstats">
+                <div class="home-powerstat">
+                    <p class="powerstat-desc">Energy Stored</p>
+                    <div class="powerstat-stat">
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                    </div>
+                    <div class="powerstat-repro">
+                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
+                        <p class="powerstat-percentage">80%</p>
+                    </div>
+                </div>
+                <div class="home-powerstat">
+                    <p class="powerstat-desc">Energy Stored</p>
+                    <div class="powerstat-stat">
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                    </div>
+                    <div class="powerstat-repro">
+                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
+                        <p class="powerstat-percentage">80%</p>
+                    </div>
+                </div>
+                <div class="home-powerstat">
+                    <p class="powerstat-desc">Energy Stored</p>
+                    <div class="powerstat-stat">
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                    </div>
+                    <div class="powerstat-repro">
+                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
+                        <p class="powerstat-percentage">80%</p>
+                    </div>
+                </div>
+                <div class="home-powerstat">
+                    <p class="powerstat-desc">Energy Stored</p>
+                    <div class="powerstat-stat">
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
+                    </div>
+                    <div class="powerstat-repro">
+                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
+                        <p class="powerstat-percentage">80%</p>
+                    </div>
+                </div>
            </div>
-           <!-- Logged in -->
+           <div class="nav">
+                <div class="navmain">
+                    <img src="{{url_for('static', filename='home.svg')}}" class="navlink" alt="">
+                    <img src="{{url_for('static', filename='services.svg')}}" class="navlink to-services" alt="">
+                    <img src="{{url_for('static', filename='buy.svg')}}" class="navlink2" alt="">
+                    <img src="{{url_for('static', filename='updates.svg')}}" style="float: right; margin-right: 0;" class="navlink" alt="">
+                    <img src="{{url_for('static', filename='account.svg')}}" style="float: right;" class="navlink" alt="">
+                </div>
+           </div>
            <!-- If not loggedin -->
            {% else %}
            <a href="#" class="to-signup">Signup</a>
@@ -119,6 +152,8 @@
                 </div>
                 <h5>Dont have an account? <span style="color: rgb(1, 195, 1); cursor: pointer;">Sign Up</span></h5>
             </center>
+            </div>
+            <div class="services">
             </div>
         </div>
     </div>
