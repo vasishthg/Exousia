@@ -17,6 +17,7 @@ $(".to-home").click(function(){
   $(".services").hide("slide", {direction: "down"}, 350)
   $(".login").hide("slide", {direction: "left"}, 350)
   $(".buy").hide("slide", {direction: "left"}, 350)
+  $(".confirmed").hide("slide", {direction: "left"}, 350)
   $(".updates").hide("slide", {direction: "left"}, 350)
   $(".profile").hide("slide", {direction: "right"}, 350)
   document.getElementById("display-head").innerHTML = "  Home"
@@ -197,6 +198,10 @@ $(".back2").click(function(){
     $(".back2").css("cursor", "pointer")
 })
 
+$(".to-complete").click(function(){
+  $(".confirmed").show("slide", {direction: "left"}, 350)
+  $(".cart").hide("slide", {direction: "left"}, 350)
+})
 
 function iTried(){
   alert("I tried making google auth, couldnt make :(. discord auth works tho :)")
