@@ -139,6 +139,7 @@ body{
     background-color: #141414;
     border: 2px solid #00FFB2;
     outline: none;
+    border-radius: 0.4em;
     color: rgb(0, 0, 0);
     font-weight: 700;
     font-family: 'Red Hat Display';
@@ -156,7 +157,7 @@ body{
     }
     100%{
         filter: drop-shadow(0 0 0 #00ffb2);
-        border-radius: 0;
+        border-radius: 0.4em;
     }
 }
 
@@ -805,7 +806,7 @@ body{
     position: absolute;
     background-color: white;
     color: black;
-    /* display: none; */
+    display: none;
 }
 
 .profile-nick{
@@ -861,6 +862,158 @@ body{
 }
 
 .profile-account{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-sensors{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-battery{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-general{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-sensorbattery{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-monthlycheck{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-quaterlycheck{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-tiles{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-grassrange{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-smoothewood{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-floors{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+.product-atc{
+    text-decoration: underline 2px solid;
+    text-underline-offset: 0.2em;
+    vertical-align: middle;
+    margin-block-start: 0;
+    display: inline;
+    font-weight: 900;
+}
+
+.product-price{
+    font-size: 1.3em;
+    margin-left: 2em;
+    vertical-align: middle;
+    margin-block-start: 0;
+    display: inline;
+}
+
+.product-desc{
+    margin-top: 2em;
+    text-align: left;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.back{
+    float: right;
+    margin-right: 3em;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.cart{
     width: 100%;
     height: 100%;
     top: 0;

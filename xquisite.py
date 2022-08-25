@@ -1,4 +1,3 @@
-from time import sleep
 from flask import Flask, render_template, request, session, jsonify, url_for, redirect, json
 import datetime
 from zenora import APIClient
@@ -39,6 +38,12 @@ def index():
         else:
             cur.execute("INSERT INTO users VALUES(NULL, %s, %s, %s, NULL, %s)", (uname, upass, uemail, unick))
             mysql.connection.commit()
+            cur.execute("SELECT id FROM users WHERE email = %s", [uemail])
+            uid = cur.fetchone()
+            cur.execute("INSERT INTO cart VALUES(NULL, %s, '[]')", [str(uid['id'])])
+            mysql.connection.commit()
+            cur.execute("SELECT * FROM users WHERE email = %s", [uemail])
+            account = cur.fetchone()
             session['loggedin'] = True
             session['id'] = account['id']
             session['name'] = account['name']
@@ -49,8 +54,6 @@ def index():
     if request.method == "POST" and "lo-email" in request.form and "lo-password" in request.form:
         uemail = request.form.get("lo-email")
         upass = request.form.get("lo-password")
-        print(uemail)
-        print(upass)
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT * FROM users WHERE email = %s AND password = %s", (uemail, upass))
         account = cur.fetchone()
@@ -72,6 +75,20 @@ def index():
             acc_password = request.form.get("acc-password")
             cur.execute("UPDATE users SET name = %s, password = %s WHERE email = %s", (acc_name, acc_password ,acc_email))
             mysql.connection.commit()
+        if request.method == "POST" and "cart-productid" in request.form:
+            productid = request.form.get("cart-productid")
+            cur.execute("SELECT id FROM users WHERE email = %s", [account['email']])
+            userid = cur.fetchone()['id']
+            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cur.execute("SELECT productsid FROM cart WHERE userid = %s", [userid])
+            productsid = cur.fetchone()['productsid']
+            productsid = list(productsid)
+            if str(productid) not in productsid:
+                productsid.append(productid)
+                productsid.remove('[')
+                productsid.remove(']')
+                cur.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit()
         return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, details = account)
     #Discord login  
     if 'token' in session:
@@ -80,7 +97,28 @@ def index():
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT * FROM users WHERE discordid = %s", [str(current_user.id)])
         details_dc = cur.fetchone()
+        if request.method == "POST" and "acc-name" in request.form in request.form or "acc-password":
+            acc_email = request.form.get("acc-email")
+            acc_name = request.form.get("acc-name")
+            acc_password = request.form.get("acc-password")
+            cur.execute("UPDATE users SET name = %s, password = %s WHERE email = %s", (acc_name, acc_password ,acc_email))
+            mysql.connection.commit()
+        if request.method == "POST" and "cart-productid" in request.form:
+            productid = request.form.get("cart-productid")
+            cur.execute("SELECT id FROM users WHERE discordid = %s", [current_user.id])
+            userid = cur.fetchone()['id']
+            cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cur.execute("SELECT productsid FROM cart WHERE userid = %s", [userid])
+            productsid = cur.fetchone()['productsid']
+            productsid = list(productsid)
+            if str(productid) not in productsid:
+                productsid.append(productid)
+                productsid.remove('[')
+                productsid.remove(']')
+                cur.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
+                mysql.connection.commit() 
         return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, current_user = current_user, details = details_dc)
+   
     return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL)
 
 @app.route("/oauth/callback")
@@ -100,8 +138,11 @@ def dcauth():
     if account:
         return redirect('/')
     else:
-        print(current_user.email)
         cur.execute("INSERT INTO users VALUES(NULL, NULL, NULL, NULL, %s, %s)", (current_user.id, current_user.username))
+        mysql.connection.commit()
+        cur.execute("SELECT id FROM users WHERE discordid = %s", [str(current_user.id)])
+        uid = cur.fetchone()
+        cur.execute("INSERT INTO cart VALUES(NULL, %s, '[]')", [uid['id']])
         mysql.connection.commit()
     return redirect('/')
 

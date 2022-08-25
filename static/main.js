@@ -114,6 +114,46 @@ $(".sys-title").click(function(){
   $("#acccc-img").css("display", "block")
 })
 
+$("#repair-floor").click(function(){
+  $(".product-floors").show("slide", {direction: "right"}, 300)
+})
+
+$("#repair-sensors").click(function(){
+  $(".product-sensors").show("slide", {direction: "right"}, 300)
+})
+
+$("#repair-battery").click(function(){
+  $(".product-battery").show("slide", {direction: "right"}, 300)
+})
+
+$("#repair-general").click(function(){
+  $(".product-general").show("slide", {direction: "right"}, 300)
+})
+
+$("#subscription-sensorbattery").click(function(){
+  $(".product-sensorbattery").show("slide", {direction: "right"}, 300)
+})
+
+$("#subscription-quaterlycheck").click(function(){
+  $(".product-quaterlycheck").show("slide", {direction: "right"}, 300)
+})
+
+$("#subscription-monthlycheck").click(function(){
+  $(".product-monthlycheck").show("slide", {direction: "right"}, 300)
+})
+
+$("#buy-grass").click(function(){
+  $(".product-grassrange").show("slide", {direction: "right"}, 300)
+})
+
+$("#buy-tiles").click(function(){
+  $(".product-tiles").show("slide", {direction: "right"}, 300)
+})
+
+$("#buy-smoothewood").click(function(){
+  $(".product-smoothewood").show("slide", {direction: "right"}, 300)
+})
+
 $("#to-support").click(function(){
   alert("Looks like you need support? Click 'ok' to get support")
   window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
@@ -129,6 +169,19 @@ $("#to-appinfo").click(function(){
 
 $("#to-manual").click(function(){
   alert("Ran out of budget ;-;")
+})
+
+$(".back").click(function(){
+  $(".product-smoothewood").hide("slide", {direction: "right"}, 300);
+  $(".product-grassrange").hide("slide", {direction: "right"}, 300);
+  $(".product-tiles").hide("slide", {direction: "right"}, 300);
+  $(".product-quaterlycheck").hide("slide", {direction: "right"}, 300);
+  $(".product-monthlycheck").hide("slide", {direction: "right"}, 300);
+  $(".product-general").hide("slide", {direction: "right"}, 300);
+  $(".product-battery").hide("slide", {direction: "right"}, 300);
+  $(".product-sensors").hide("slide", {direction: "right"}, 300);
+  $(".product-floors").hide("slide", {direction: "right"}, 300);
+  $(".product-sensorbattery").hide("slide", {direction: "right"}, 300);
 })
 
 function iTried(){
