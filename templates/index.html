@@ -409,7 +409,70 @@
             <center><img src="{{url_for('static', filename='logo.svg')}}" style="max-width: 5em; margin-top: 2em; filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.426)); padding: 1em 1em 1em 1em;" id="acccc-img" alt=""></center>
         </div>
         <div class="cart">
-            
+            <h1 style="margin-top: 5em; margin-left: 2em; font-size: 1.4em; font-weight: 500; cursor: pointer;" class="back2">< Cart</h1>
+            {% for product in products %}
+            <center><div class="cartitem">
+                <p class="productname">{{product[0]}}<span class="cartcost">${{product[1]}}</span></p>
+            </div>
+             {% endfor %}
+             <div class="cart-address">
+                <div class="cart-top">
+                <img src="{{url_for('static', filename='location.svg')}}" class="cart-location" alt="">
+                <p class="address-title">Address</p>
+                </div>
+                <br>
+                <h4 class="adres">234, lorem ipsum street, Xino City</h4>
+                <img src="{{url_for('static', filename='edit.svg')}}" class="adres-edit" alt="">
+             </div>
+             <div class="cart-address">
+                <div class="cart-top">
+                    <img src="{{url_for('static', filename='tag.svg')}}" class="cart-location" alt="">
+                    <p class="address-title">Apply Coupon</p>
+                </div>
+                <p style="margin-left: 1em;">___________________</p>
+            </div>
+            <div class="cart-address">
+                <div class="cart-top">
+                    <p class="address-title">Detailed Bill</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="details">                    
+                    <p class="cart-db">Sub Total <span class="cart-span">XXX</span></p>
+                    <p class="cart-db">Taxes <span class="cart-span">XXX</span></p>
+                    <p class="cart-db">Discount <span class="cart-span">XXX</span></p>
+                </div>
+                <hr>
+                <div class="details">                    
+                <p class="cart-db" style="font-weight: 600;">Total <span class="cart-span">XXX</span></p>
+                </div>
+            </div>
+            <center>
+            <div class="cart-pay">
+                <p style="font-weight: 800; margin-left: 1em; display: inline; vertical-align: middle;">Rs. XXX</p>
+                <button class="mogus to-complete">Proceed to pay</button>
+            </div>
+            </center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+             </div>
+            </center>
+            <div class="confirmed">
+                <center><img src="{{url_for('static', filename='confirmed.png')}}" style="max-width: 15em; margin-top:4em;" alt="">
+                <h1 style="margin-top: -3.5em;">Confirmed</h1>
+                <p style="margin-left: 3em; margin-right: 3em; color: grey; font-weight: 600;">Your booking has been confirmed for, <strong>28 August 2022</strong> .
+<br><br>
+                    You will get a confirmation email with details shorty .</p>
+                    <br>
+                    <h3>4:00PM - Sunday</h3>
+                    <br><br>
+                        <p style="font-weight: 900; padding: 1em 5em 1em 5em; background-color: #00FFB2; border-radius: 0.7em; margin-left: 2em; margin-right: 2em; filter: drop-shadow(0px 153px 61px rgba(0, 0, 0, 0.01)) drop-shadow(0px 86px 52px rgba(0, 0, 0, 0.05)) drop-shadow(0px 38px 38px rgba(0, 0, 0, 0.09)) drop-shadow(0px 10px 21px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));">Back to Home</p>
+                </center>
+            </div>
         </div>
            <div class="nav">
                 <div class="navmain">

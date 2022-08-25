@@ -71,7 +71,15 @@ $(".to-buy").click(function(){
   $(".profile").hide("slide", {direction: "right"}, 350)
   document.getElementById("display-head").innerHTML = "  Buy"
   document.getElementById("dimg").src="/static/cart.svg";
+  document.getElementById("dimg").setAttribute('class', 'display-img to-cart')
+  $("#dimg").css('cursor', "pointer")
+  $(".to-cart").click(function(){
+    $(".cart").show("slide", {direction: "left"}, 300)
+  })
 })
+
+
+
 
 $(".to-home").click(function(){
   $(".login").hide("slide", {direction: "left"}, 350)
@@ -183,6 +191,12 @@ $(".back").click(function(){
   $(".product-floors").hide("slide", {direction: "right"}, 300);
   $(".product-sensorbattery").hide("slide", {direction: "right"}, 300);
 })
+
+$(".back2").click(function(){
+    $(".cart").hide("slide", {direction: "left"}, 350)
+    $(".back2").css("cursor", "pointer")
+})
+
 
 function iTried(){
   alert("I tried making google auth, couldnt make :(. discord auth works tho :)")

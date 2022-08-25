@@ -89,7 +89,21 @@ def index():
                 productsid.remove(']')
                 cur.execute("UPDATE cart SET productsid = %s WHERE userid = %s", (str(productsid), userid))
                 mysql.connection.commit()
-        return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, details = account)
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT id FROM users WHERE email = %s", (session['email'],))
+        userid = str(cur.fetchone()['id'])
+        cur.execute("SELECT productsid FROM cart WHERE userid = %s", [userid])
+        productsid = str(cur.fetchone()['productsid'])
+        products = []
+        productsid = list(productsid)
+        for productid in productsid:
+            if productid != '[' and productid != ']' and productid != ','  and productid != ' '  and productid != "'" and productid != '"' :
+                cur.execute("SELECT * FROM product WHERE id = %s", (productid))
+                productdetails = cur.fetchone()
+                products.append([productdetails['name'], productdetails['price']])
+        email = session['email']
+        print(products)
+        return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, details = account, products = products)
     #Discord login  
     if 'token' in session:
         bearer_client = APIClient(session.get('token'), bearer=True)
