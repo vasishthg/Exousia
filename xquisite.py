@@ -61,12 +61,26 @@ def index():
             session['password'] = account['password']
             session['email'] = account['email']
             session['nickname'] = account['nickname']
-            return redirect('/')        
+    if 'loggedin' in session:
+        email = session['email']
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT * FROM users WHERE email = %s", [email])
+        account = cur.fetchone()
+        if request.method == "POST" and "acc-name" in request.form in request.form or "acc-password":
+            acc_email = request.form.get("acc-email")
+            acc_name = request.form.get("acc-name")
+            acc_password = request.form.get("acc-password")
+            cur.execute("UPDATE users SET name = %s, password = %s WHERE email = %s", (acc_name, acc_password ,acc_email))
+            mysql.connection.commit()
+        return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, details = account)
+    #Discord login  
     if 'token' in session:
         bearer_client = APIClient(session.get('token'), bearer=True)
         current_user = bearer_client.users.get_current_user()
-        return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, current_user = current_user)
-
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT * FROM users WHERE discordid = %s", [str(current_user.id)])
+        details_dc = cur.fetchone()
+        return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL, current_user = current_user, details = details_dc)
     return render_template("index.html", time = cur_time, oauth_url = OAUTH_URL)
 
 @app.route("/oauth/callback")
