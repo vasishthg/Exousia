@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 $(".auth-input").focus(function(){
     console.log("niece")
     $(this).animate({
@@ -13,19 +12,6 @@ $(".auth-input").focus(function(){
       "border-color": '#525252',
     }, 500)
   })
-=======
-$(".to-home").click(function(){
-  $(".signup").hide("slide", {direction: "left"}, 350)
-  var delay =400
-  setTimeout(function(){
-    $(".topbar-statpath").css("fill", "black");
-  }, delay-500);
-  setTimeout(function(){
-    $(".topbar-time").css("z-index", "100");
-    $(".topbar-time").css("color", "black");
-  }, delay)
-});
->>>>>>> parent of 5cb7e8e (Update cuz why not)
 
 $(".alternate-auth").hover(function(){
     $(".alternate-auth-vector").animate({
@@ -36,7 +22,6 @@ $(".alternate-auth").hover(function(){
     }, 500)
 })
 
-<<<<<<< HEAD
 $(".alternate-auth").mouseleave(function(){
     $(".alternate-auth-vector").animate({
         left: "50%;"
@@ -55,27 +40,6 @@ document.body.addEventListener('mousemove', onMouseMove);
 for (let i = 0; i < $hoverables.length; i++) {
   $hoverables[i].addEventListener('mouseenter', onMouseHover);
   $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
-=======
-$(".to-home").click(function(){
-  $(".login").hide("slide", {direction: "left"}, 350)
-  var delay =400
-  setTimeout(function(){
-    $(".topbar-statpath").css("fill", "black");
-  }, delay-500);
-  setTimeout(function(){
-    $(".topbar-time").css("z-index", "100");
-    $(".topbar-time").css("color", "black");
-  }, delay)
-});
-
-$(".to-services").click(function(){
-  $(".services").show("slide", {direction: "down"}, 300)
-  document.getElementById("display-head").innerHTML = "< Services"
-})
-
-function iTried(){
-  alert("I tried making google auth, couldnt make :(. discord auth works tho :)")
->>>>>>> parent of 5cb7e8e (Update cuz why not)
 }
 
 function onMouseMove(e) {
@@ -83,7 +47,6 @@ function onMouseMove(e) {
       x: e.clientX - 15,
       y: e.clientY - 15
 
-<<<<<<< HEAD
     })
     $(".cursor").css("display", "block")
   TweenMax.to($smallBall, .1, {
@@ -121,8 +84,3 @@ $('#signupform').submit(function(event) {
 $("#goto-signup").click(function(){
   $()
 })
-=======
-if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
->>>>>>> parent of 5cb7e8e (Update cuz why not)
