@@ -1,1149 +1,273 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @font-face {
-    font-family: 'sfpro-semibold';
-    src: url('fonts/SF-Pro-Text-Semibold.otf');
+  font-family: 'gilroy-100';
+  src: url(/static/fonts/Gilroy-Thin.ttf);
 }
 
-.exousía{
-    position: absolute;
-    bottom: -0.5em;
-    font-family: 'Quicksand', sans-serif;
-    color: #00FFB2;
-    font-size: 5em;
-    right: .51em;
+@font-face {
+  font-family: 'gilroy-200';
+  src: url(/static/fonts/Gilroy-UltraLight.ttf);
 }
+
+@font-face {
+  font-family: 'gilroy-300';
+  src: url(/static/fonts/Gilroy-Light.ttf);
+}
+
+@font-face {
+  font-family: 'gilroy-400';
+  src: url(/static/fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'gilroy-500';
+  src: url(/static/fonts/Gilroy-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'gilroy-600';
+  src: url(/static/fonts/Gilroy-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: 'gilroy-700';
+  src: url(/static/fonts/Gilroy-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'gilroy-800';
+  src: url(/static/fonts/Gilroy-ExtraBold.ttf);
+}
+
+
+@font-face {
+  font-family: 'gilroy-900';
+  src: url(/static/fonts/Gilroy-Black.ttf);
+}
+
+
+@font-face {
+  font-family: 'gilroy-1000';
+  src: url(/static/fonts/Gilroy-Heavy.ttf);
+}
+
+@font-face {
+  font-family: 'Suntage';
+  src: url('/static//fonts/suntage.ttf');
+}
+  
 
 body{
-    background: url('bg.svg');
-    font-family: 'Red Hat Display';
-    background-size: auto;
-    overflow: hidden;
+    color: #e4e5eb;
+    background-color: #0b0b0b;
+    overflow: auto;
+    font-family: "gilroy-500";
 }
 
-.app{
-    width: 25em;
-    height: 100%;
+:root{
+    --main-color: #00FFB2;
+}
+
+
+::-webkit-scrollbar{
+    width: 5px;
+    height: 0;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 1em;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: #00ffb3b1;
+}
+
+.login-img{
+    width: 45%;
+    overflow: hidden !important;
+    position: relative;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow-y: auto;
+    left: 0;
+    bottom: 0;
     top: 0;
-    background-color: white;
 }
 
-.topbar{
-    margin-left: 2em;
-    margin-right: 1em;
-    margin-top: 1.5em;
-    z-index: 239482945000;
-}
-
-.topbar-stats{
-    display: inline;
-    position: relative;
-    z-index: 239482945000;
-    right: 0;
-    vertical-align: middle;
-    float: right;
-}
-
-.topbar-stat{
-    margin-right: 0.3em;
-    fill: white !important;
-    max-width: 1.2em;
-    z-index: 239482945000;
-    user-select: none;
-    pointer-events: none;
-
-}
-
-.topbar-statpath{
-    fill: black ;
-}
-
-.topbar-time{
-    font-family: 'sfpro-semibold';
-    display: inline;
-    position: relative;
-    font-weight: 900;
-    z-index: 2394829450010;
-}
-
-::selection{
-    background-color: #00FFB2;
-    color: #141414; 
-}
-
-.signup{
+#login-img{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    overflow: hidden !important;
+    left: 0;
     width: 100%;
-    height: 100%;
-    top: 0;
-    position: absolute;
-    overflow-y: auto;
-    z-index: 0;
-    color: white;
-    background-color: #141414;
-    display: none;
-}
-
-.backbtn{
-    width: 3em;
-    font-weight: 900;
-    margin-left: 3em;
-    cursor: pointer;
-    border-radius: 1.3em;
-    padding-top: 0.7em;
-    padding-bottom: 0.7em;
-    color: white;
-    background: #171717;
-    margin-top: 7em;
-    border: 2px solid #6A6A6A;  
-    display: inline;
-    margin-right: 2em;
-}
-
-.su-head{
-    text-align: center;
-    font-size: 2.3em;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-top: -1.25em;
-}
-
-.signup-form{
-    margin-left: 2em;
-    margin-right: 2em;
-}
-
-.su-name{
-    color: white;
-}
-
-.su-input{
-    width: 90%;
-    height: 3.5em;
-    border: none;
-    outline: none;
-    background: #171717;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    font-family: 'Red Hat Display';
-    padding-left: 2em;
-    color: white;
-    margin-top: 0.5em;
-    border-radius: 0.6em;
-}
-
-.su-submit{
-    background-color: #141414;
-    border: 2px solid #00FFB2;
-    outline: none;
-    border-radius: 0.4em;
-    color: rgb(0, 0, 0);
-    font-weight: 700;
-    font-family: 'Red Hat Display';
-    border-radius: 0.2em;
-    padding: 0.5em 1em 0.5em 1em;
-    cursor: pointer;
-    color: white;
-    animation: nglowrev 0.5s 1 forwards;
-}
-
-@keyframes nglowrev {
-    0%{
-        filter: drop-shadow(0 0 0.3rem #00ffb2);
-        border-radius: 0.7em;
-    }
-    100%{
-        filter: drop-shadow(0 0 0 #00ffb2);
-        border-radius: 0.4em;
-    }
-}
-
-.su-submit:hover{
-    animation: nglow 0.5s 1 forwards;
-}
-
-@keyframes nglow {
-    100%{
-        border-radius: 0.7em;
-        filter: drop-shadow(0 0 0.3rem #00ffb2);
-    }
-}
-
-.su-input:focus{
-    animation: suinputanim 0.5s 1 forwards ease-in-out;
-}
-
-@keyframes suinputanim {
-    100%{
-        filter: drop-shadow(0 0 0.2rem #00FFB2);
-        background-color: #141414;
-        border-radius: 1em;
-        border: 1px solid #00FFB2;
-    }
-}
-
-.authbtn{
-    width: 4.5em;
-    height: 4.5em;
-    background-color: #171717;
-    border: 1.8px solid #00FFB2;
-    display: inline-block;
-    border-radius: 0.6em;
-    cursor: pointer;
-    margin-right: 3em;
-}
-
-#auth-google{
-    width: 4.5em;
-    height: 4.5em;
-    background-color: #171717;
-    border: 1.8px solid #00FFB2;
-    display: inline-block;
-    border-radius: 0.6em;
-    cursor: pointer;
-    margin-right: 3em;
+    opacity: 90%;
 }
 
 .login{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    z-index: 0;
-    color: white;
-    background-color: #141414;
-    display: none;
-}
-
-.navbar{
-    position: fixed;
-    bottom: 0;
-    height: 1em;
-    width: 100%;
-    background-color: #141414;
-    padding-top: 2em;
-    padding-bottom: 2.75em;
-}
-
-.display-nav{
-    margin-left: 1em;
-    margin-right: 1em;
-    z-index: 3484;
     position: relative;
-}
-
-.display-head{
-    font-weight: 900;
-    font-family: 'Red Hat Display';
-    font-size: 1.2em;
-    cursor: pointer;
-    display: inline;
-    letter-spacing: -0.5px;
-}
-
-
-/* width */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 1em;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.display-img{
-    vertical-align: bottom;
-    float: right;
-    margin-right: 1em;
-}
-
-.home-powerbg{
-    width: 100%;
-    z-index: -1;
-    margin-top: 1em;
     position: absolute;
-    pointer-events: none;
-    user-select: none;
-}
-
-.home-powerex{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 1em;
-    letter-spacing: 0.03em;
-    font-weight: 800;
-    font-family: 'Red Hat Display';
-    color: #00FFB2;
-}
-
-.home-powertxt{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    margin-top: 5em;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-}
-
-.nav{
-    width: 100%;
-    height: 2.5em;
-    padding-top: 1.5em;
-    position: relative;
-    z-index: 42384239423423423423423423987528947749238749823479247893479823493279;
-    padding-bottom: 1em;
-    position: fixed;
-    background: url('navbg.svg');
-    bottom: 0;
-}
-
-.navmain{
-    margin-left: 2em;
-    margin-right: 2em;
-    padding-top: .75em;
-}
-
-.navlink{
-    margin-right: 2em;
-    max-width: 1.1em;
-    animation: navglowrev 0.3s 1 forwards;
-    display: inline;
-    cursor: pointer;
-}
-
-.navlink:hover{
-    animation: navglow 0.4s 1 forwards;
-}
-
-/* @keyframes navglow {
-    100%{
-        filter: drop-shadow(2px 5px 0.1rem #00FFB2);
-        transform: translateY(-2%);
-    }
-}
-
-@keyframes navglowrev {
-    0%{
-        filter: drop-shadow(2px 5px 0.1rem #00FFB2);
-        transform: translateY(-2%);
-    }
-    100%{
-        filter: drop-shadow(0 0 0);
-        transform: translateY(0);
-    }
-} */
-.navlink2{
-    position: absolute;
-    left: 50%;
-    z-index: 81394489;
-    cursor: pointer;
-    transform: translateX(-60%);
-    bottom: 1.4em;
-    filter: drop-shadow(0 3px 0.2rem black);
-    animation: navsmootherev 0.3s 1 forwards;
-}
-
-.navlink2:hover{
-    animation: navsmoothe 0.3s 1 forwards;
-}
-
-@keyframes navsmoothe {
-    100%{
-        filter: drop-shadow(0 2px 0.2rem #000000);
-        bottom: 1.2em;
-    }
-}
-
-@keyframes navsmootherev {
-    0%{
-        filter: drop-shadow(0 2px 0.2rem #000000);
-        bottom: 1.2em;
-    }
-    100%{
-        filter: drop-shadow(0 3px 0.2rem black);
-        bottom: 1.4em;
-    }
-}
-.home-powerstats{
-    margin-top: 18em;
-    overflow-y: scroll;
-    height: 18em;
-}
-
-.home-powerstat{
-    margin-right: 2em;
-    margin-left: 2em;
-    background-color: #171717;
-    color: white;
-    height: 6em;
-    border-radius: 0.8em;
-    overflow: hidden;
-    margin-top: 1.5em;
-    padding: 1em 1em 1em 1em;
-}
-
-.home-loggedin{
-    position: relative;
-}
-
-*{
-    overflow-x: hidden;
-}
-
-.powerstat-desc{
-    font-size: 0.7em;
-    margin-top: 0;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.03rem;
-    margin-bottom: 0;
-}
-
-.powerstat-stat{
-    display: inline-block;
-}
-
-.powerstat-statdesc{
-    font-size: 0.8em;
-    overflow: hidden;
-    font-weight: 400;
-    line-height: 1em;
-}
-
-.powerstat-repro{
-    overflow: hidden;
-    float: right;
-}
-
-.powerstat-bg{
-    position: absolute;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.powerstat-percentage{
-    z-index: 3;
-    font-size: 1.2em;
-    font-weight: 700;
-    overflow: hidden;
-    padding-bottom: 2em;
-    margin-left: 0.9em;
-    margin-top: -2.8em;
-    color: white;
-}
-
-/* Services */
-
-.services{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.services-search{
-    width: 73%;
-    margin-right: 10%;
-    height: 2em;
-    padding-top: calc(2em/2);
-    padding-bottom: calc(1em/2);
-    padding-left: 7%;
-    border: none;
-    outline: none;
-    font-family: "Red Hat Display", sans-serif;
-    box-shadow: 0px 148px 59px rgba(0, 0, 0, 0.01), 0px 83px 50px rgba(0, 0, 0, 0.05), 0px 37px 37px rgba(0, 0, 0, 0.09), 0px 9px 20px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-    margin-top: 9em;
-    border-radius: 0.8em;
-    background-color: #00FFB2;
-    margin-left: 10%;
-}
-
-.services-searchimg{
-    float: right;
-    margin-right: 2em;
-    vertical-align: middle;
-}
-
-.services-searchtxt{
-    vertical-align: middle;
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.7);
-    font-family: 'Red Hat Display';
-    letter-spacing: 0;
-    display: inline;
-}
-
-.services-title{
-    margin-left: 2em;
-    font-weight: 800;
-    margin-top: 2em;
-}
-
-.services-bigboi{
-    width: 100%;
-    white-space: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
-}
-
-.services-bigboi::-webkit-scrollbar{
-    height: 0;
-}
-
-.services-repair{
-    display: inline-block;
-    cursor: pointer;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
-    white-space: nowrap;
-    overflow-y: hidden;  overflow-x: hidden;
-
-}
-
-.repairs-img{
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.repairs-name{
-    text-align: center;
-    font-weight: 700;
-}
-
-.nloggedin-main{
-    background-color: #141414;
-    bottom: 0;
-    z-index: -1;
-    position: absolute;
-    height: 39%;
-    width: 100%;
-}
-
-.get-started{
-    height: 3em;
-    background: linear-gradient(180deg, #4BFFC9 0%, #00FFB2 100%);
-    box-shadow: 0px 160px 45px rgba(0, 0, 0, 0.01), 0px 102px 41px rgba(0, 0, 0, 0.05), 0px 58px 35px rgba(0, 0, 0, 0.18), 0px 26px 26px rgba(0, 0, 0, 0.3), 0px 6px 14px rgba(0, 0, 0, 0.34), 0px 0px 0px rgba(0, 0, 0, 0.35);
-    font-family: 'Red Hat Display';
-    font-weight: 800;
-    width: 55%;
-    border-radius: 5em;
-    font-size: 1em;
-    cursor: pointer;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-.services-reviews{
-    width: 15em;
-    margin-left: 2em;
-    padding: 1em 1em 1em 1em;
-    border-radius: 0.6em;
-    height: 9em;
-    display: inline-block;
-    color: #000000;
-    overflow: hidden;
-    box-shadow: 0px 101px 40px rgba(0, 0, 0, 0.01), 0px 57px 34px rgba(0, 0, 0, 0.05), 0px 25px 25px rgba(0, 0, 0, 0.09), 0px 6px 14px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);  
-}
-
-.reviews-img{
-    display: inline-block;
-    max-width: 3em;
-    vertical-align: middle;
-}
-
-.review-info{
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.reviews-name{
-    line-height: 1em;
-    margin-block-end: 0;
-    overflow: hidden;
-}
-
-.review-star{
-    margin-top: -4em;
-    line-height: 0;
-    margin-block-start: 0;
-}
-
-.review-review{
-    white-space: normal;
-    color: #7B7B7B;
-    line-height: 1.2em;
-    font-size: 0.9em;
-    word-wrap: break-word;
-    overflow: hidden;
-}
-
-/* Buy */
-.buy{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.buy-caro{
-    white-space: nowrap;
-    margin-top: 8em;
-    margin-left: -54%;
-    overflow-x: hidden;
-}
-
-.buy-img{
-    vertical-align: middle;
-    max-width: 15em;
-    display: inline-block;
-}
-
-.buy-caro::-webkit-scrollbar{
-    height: 0;
-}
-
-.buy-active{
-    vertical-align: middle;
-    margin-left: 1em;
-    margin-right: 1em;
-    max-width: 20em;
-}
-
-.so-buy{
-    width: 55%;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    box-shadow: -8px 103px 41px rgba(0, 0, 0, 0.01), -5px 58px 35px rgba(0, 0, 0, 0.03), -2px 26px 26px rgba(0, 0, 0, 0.04), -1px 6px 14px rgba(0, 0, 0, 0.05), 0px 0px 0px rgba(0, 0, 0, 0.05);
-    background-color: #ffffff;
-    border-radius: 2em;
-}
-
-.so-offer{
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-radius: 0.8em;
-    background: #FFFFFF;
-    box-shadow: 0px 193px 77px rgba(0, 0, 0, 0.01), 0px 108px 65px rgba(0, 0, 0, 0.05), 0px 48px 48px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-}
-
-.so-img{
-    width: 18em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-}
-
-.so-title{
-    text-align: left;
-    font-weight: 500;
-    margin-left: 1em;
-    margin-top: 00;
-    margin-block-end: 0.2em;
-}
-
-.so-txt{
-    text-align: left;
-    font-size: 0.89em;
-    margin-right: 1.5em;
-    margin-left: 1.5em;
-}
-
-.loader{
-    position: fixed;
-    left: 0;
     right: 0;
-    font-family: 'Red Hat Display';
-    color: red;
+    width: 55%;
     top: 0;
     bottom: 0;
-    background-color: black;
-    z-index: 32942394239048290348290342909028490284902482904802934829034203948209482094809284902384902849023840928340923849028490234290840924820938;
+    text-align: center;
 }
 
-/* Updates */
-.updates{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
+.auth-img{
+    max-width: 5em;
+    margin-top: 3em;
 }
 
-.updates-avg{
-    margin-left: 7%;
-    margin-right: 10%;
-    width: 80%;
-    border-radius: 1em;
-    padding: 1em 1em 1em 1em;
-    margin-top: 8em;
-    font-family: 'Red Hat Display', sans-serif;
-    color: white;
-    font-weight: 300;
-    background-color: #000000;
+.login-txt{
+  text-align: left;
+  font-family: 'Suntage';
+  cursor:default;
+  margin-block-end: 0;
+  position: fixed;
+  margin-left: 2em;
+  letter-spacing: 0.1em;
+  margin-top: 2em;
 }
 
-.avg-title{
-    font-size: 1.1em;
-    margin-block-end: 0;
-    margin-block-start: 0;
-    display: inline;
-    font-weight: 400;
+#login-welcomeback{
+  font-family: "gilroy-600";
+  font-size: 1.1em;
+  margin-block-start: 0.5em;
 }
 
-.avg-val{
-    font-size: 1.1em;
-    font-weight: 400;
-    display: inline;
-    float: right;
-    margin-block-end: 0;
-    text-align: right;
-    margin-block-start: 0;
+.auth-input{
+  width: 50%;
+  font-size: 1em;
+  margin-top: 2.5em;
+  background-color: transparent;
+  color: #e4e5eb;
+  padding: 0.5em 0em 0.7em 0em;
+  font-family: 'gilroy-600';
+  outline: none;
+  border: none;
+  border-bottom: 3px solid;
+  border-color: #525252;
 }
 
-.avg-img{
-    max-width: 19em;
-    pointer-events: none;
-    user-select: none;
-    margin-top: 2em;
-    -webkit-user-drag: none;
+
+.auth-input{
+  animation: borderchange 1s 1;
+  animation-fill-mode: forwards;
 }
 
-.pwr-summary{
-    height: 3em;
-    padding: 1em 1em 1em;
-    overflow: hidden;
-    cursor: pointer;
-    margin-left: 0%;
-    margin-right: 5%;
-    border-radius: 1em;
-    width: 90%;
-    background-color: #171717;
+.auth-submit{
+  margin-top: 2em;
+  outline: none;
+  border: none;
+  width: 7em;
+  border-radius: 1em;
+  background-color: var(--main-color);
+  height: 2.8em;
+  font-size: 1em;
+  margin-right: 25%;
+  font-family: 'gilroy-700';
+  float: right;
+  cursor: pointer;
 }
 
-.pwr-img{
-    display: inline;
-    vertical-align: middle;
+.login-altauthtxt{
+  margin-top: 3em;
+  font-size: 2em;
+  font-family: 'gilroy-700';
+  letter-spacing: 0.2em;
 }
 
-.pwr-title{
-    display: inline;
-    vertical-align: middle;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-    margin-left: 1.5em;
+.alternate-auth{
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  border: 2px #00FFB2 solid;
+  height: 4em;
+  border-radius: 0.6em;
+  display: inline-block;
+  width: 4em;
 }
 
-.updates-energy{
-    background: url("Subtract.svg");
-    width: 379px;
-    height: 257px;
-    position: absolute;
-    left: 50%;
-    color: white;
-    transform: translateX(-50%);
-    margin-top: 0.4em;
+.alternate-auth-vector{
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 2.3em;
 }
 
-.energy-img{
-    z-index: -2;
-    pointer-events: none;
-    user-select: none;
-    margin-top: -2em;
-    max-width: 10em;
+.altauth-txt{
+  position: absolute;
+  display: inline-block;
+  top: 0.4em;
+  vertical-align: middle;
+  left: 4em;
 }
 
-.energy-title{
-    margin-top: -1.2em;
-    font-weight: 500;
+#goto-signup{
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  font-size: 0.9em;
+  font-family: 'gilroy-700';
+  outline: none;
+  border: 2px white solid;
+  padding: 0.5em 1em 0.5em 1em;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0.4em;
 }
 
-.energy-val{
-    font-size: 1.4em;
-    margin-block-start: -0.2em;
-    letter-spacing: 0.03em;
-    line-height: 1em;
-    overflow: hidden;
-    font-weight: 700;
+#goto-signup:hover{
+  animation: gotobtn 0.6s 1 forwards;
 }
 
-/* Profile */
-.profile{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
+.cursor {
+  pointer-events: none;
+  display: none;
+}
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode:difference;
+  z-index: 10095434953049823900;
+}
+.cursor__ball circle {
+  fill: #f7f8fa;
 }
 
-.profile-nick{
-    font-weight: 800;
-    margin-top: 5em;
-    margin-left: 2em;
-    font-size: 1.4em;
+.signup{
+  position: relative;
+  position: absolute;
+  right: 0;
+  width: 55%;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  padding-bottom: 2em;
+  overflow: auto;
+  display: none;
 }
 
-.profile-btn{
-    cursor: pointer;
-    width: 10em;
-    height: 6em;
-    background-color: #171717;
-    border-radius: 0.7em;
-    display: inline-block;
-    margin-left: 1.6em;
-    box-shadow: 0px 66px 26px rgba(0, 0, 0, 0.01), 0px 37px 22px rgba(0, 0, 0, 0.05), 0px 17px 17px rgba(0, 0, 0, 0.09), 0px 4px 9px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-    margin-top: 0.9em;
+#goto-login{
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  font-size: 0.9em;
+  font-family: 'gilroy-700';
+  outline: none;
+  border: 2px white solid;
+  padding: 0.5em 1em 0.5em 1em;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0.4em;
 }
 
-.profile-title{
-    color: white;
-    padding-top: 2.7em;
-    letter-spacing: 0.02em;
-    margin-left: 1em;
-    font-weight: 600;
-}
-
-.profile-system{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.appinfo{
-    margin-left: 3em;
-    margin-right: 3em;
-    font-size: 0.9em;
-}
-
-.appinfo-title{
-    font-size: 1.1em;
-}
-
-.sys-title{
-    cursor: pointer;
-}
-
-.profile-account{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-sensors{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-battery{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-general{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-sensorbattery{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-monthlycheck{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-quaterlycheck{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-tiles{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-grassrange{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-smoothewood{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-floors{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.product-atc{
-    text-decoration: underline 2px solid;
-    text-underline-offset: 0.2em;
-    vertical-align: middle;
-    margin-block-start: 0;
-    display: inline;
-    font-weight: 900;
-}
-
-.product-price{
-    font-size: 1.3em;
-    margin-left: 2em;
-    vertical-align: middle;
-    margin-block-start: 0;
-    display: inline;
-}
-
-.product-desc{
-    margin-top: 2em;
-    text-align: left;
-    margin-left: 3em;
-    margin-right: 3em;
-}
-
-.back{
-    float: right;
-    margin-right: 3em;
-    font-weight: bolder;
-    cursor: pointer;
-}
-
-.cart{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
-}
-
-.cartitem{
-    color: #EEEEEE;
-    background-color: #171717;
-    width: 80%;
-    margin-bottom: 1em;
-    padding: 1em 1em 1em 1em;
-    border-radius: 1em;
-}
-
-.cart-address{
-    background-color: white;
-    width: 80%;
-    padding: 0.5em 1em 0.5em 1em;
-    margin-bottom: 1em;
-    border-radius: 0.8em;
-    filter: drop-shadow(0 0 0.4rem #00000084);
-}
-
-.cart-location{
-    display: inline;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.cart-top{
-    float: left;
-    margin-top: 0.9em;
-}
-
-.address-title{
-    display: inline;
-    font-weight: 700;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.adres{
-    font-weight: 400;
-    margin-left: -2em;
-}
-
-.adres-edit{
-    display: inline;
-    float: right;
-    margin-right: 1em;
-    margin-top: -2.5em;
-}
-
-.cart-db{
-    margin-left: 1em;
-    width: 15em;
-    padding-right: 1em;
-}
-
-.cart-span{
-    float: right;
-    font-weight: 700;
-    margin-right: -1em;
-}
-
-.details{
-    text-align: left;
-}
-
-.cart-pay{
-    background-color: #00FFB2;
-    color: black;
-    width: 80%;
-    padding: 1.3em 1em 1em 1em;
-    text-align: left;
-    border-radius: 0.7em;
-}
-
-.mogus{
-    background-color: white;
-    border-radius: 0.7em;
-    border: none;
-    display: inline;
-    cursor: pointer;
-    margin-right: 1em;
-    margin-top: -0.5em;
-    box-shadow: 0px 30px 12px rgba(0, 51, 36, 0.01), 0px 17px 10px rgba(0, 51, 36, 0.05), 0px 7px 7px rgba(0, 51, 36, 0.09), 0px 2px 4px rgba(0, 51, 36, 0.1), 0px 0px 0px rgba(0, 51, 36, 0.1);
-    float: right;
-    vertical-align: middle;
-    outline: none;
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 900;
-    padding: 0.75em 1em 0.75em 1em;
-}
-
-.productname{
-    text-align: left;
-    width: 100%;
-    float: left;
-    margin-left: 1em;
-}
-
-.cartcost{
-    display: inline;
-    text-align: right;
-    margin-right: 2em;
-    float: right;
-}
-
-.cart-pay2{
-    background-color: #000000;
-    color: white;
-    width: 80%;
-    padding: 1.3em 1em 1em 1em;
-    text-align: left;
-    border-radius: 0.7em;
-}
-
-.confirmed{
-    width: 100%;
-    height: 100%;
-    top: 0;
-    overflow-y: auto;
-    position: absolute;
-    background-color: white;
-    color: black;
-    display: none;
+a{
+  color: inherit;
+  border: inherit;
 }

@@ -4,556 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exousía</title>
-    <meta name="google-signin-client_id" content="471058557292-11ibl5901v0195974rt4ufiiqvguc9mv.apps.googleusercontent.com">
-    <link rel="shortcut icon" href="{{url_for('static', filename='favn.svg')}}" type="image/x-icon">
-    <script src="https://apis.google.com/js/api:client.js"></script>
+    <title>Exousia - Home</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 <body>
-    <div class="loader">
-        <img src="{{url_for('static', filename='loader.svg')}}" style="margin-top: 30vh; margin-left: 50%; transform: translateX(-50%);" alt="">
-    </div>
-    <h1 class="exousía">exousía</h1>
-    <div class="app">
-        <div class="topbar">
-            <p class="topbar-time">{{time}}</p>
-            <div class="topbar-stats">
-                <!-- Signal -->
-                <svg class="topbar-stat" width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="topbar-statpath" fill-rule="evenodd" clip-rule="evenodd" d="M18.8039 0.499939H17.6373C16.9929 0.499939 16.4706 1.00362 16.4706 1.62494V11.3749C16.4706 11.9963 16.9929 12.4999 17.6373 12.4999H18.8039C19.4482 12.4999 19.9706 11.9963 19.9706 11.3749V1.62494C19.9706 1.00362 19.4482 0.499939 18.8039 0.499939ZM12.1471 3.12507H13.3137C13.9581 3.12507 14.4804 3.62875 14.4804 4.25007V11.3751C14.4804 11.9964 13.9581 12.5001 13.3137 12.5001H12.1471C11.5027 12.5001 10.9804 11.9964 10.9804 11.3751V4.25007C10.9804 3.62875 11.5027 3.12507 12.1471 3.12507ZM7.82353 5.74986H6.65686C6.01253 5.74986 5.4902 6.25354 5.4902 6.87486V11.3749C5.4902 11.9962 6.01253 12.4999 6.65686 12.4999H7.82353C8.46786 12.4999 8.9902 11.9962 8.9902 11.3749V6.87486C8.9902 6.25354 8.46786 5.74986 7.82353 5.74986ZM2.33333 7.99982H1.16667C0.522334 7.99982 0 8.5035 0 9.12482V11.3748C0 11.9961 0.522334 12.4998 1.16667 12.4998H2.33333C2.97767 12.4998 3.5 11.9961 3.5 11.3748V9.12482C3.5 8.5035 2.97767 7.99982 2.33333 7.99982Z" fill="black"/>
-                </svg>    
-                <!-- Connections -->
-                <svg class="topbar-stat" width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="topbar-statpath" fill-rule="evenodd" clip-rule="evenodd" d="M9.47105 2.84599C11.9376 2.8461 14.3098 3.81668 16.0975 5.55712C16.2321 5.69149 16.4472 5.68979 16.5798 5.55332L17.8666 4.2234C17.9337 4.15418 17.9711 4.06042 17.9706 3.96287C17.97 3.86531 17.9315 3.77201 17.8636 3.7036C13.1717 -0.901199 5.76966 -0.901199 1.07774 3.7036C1.00978 3.77196 0.971216 3.86523 0.970589 3.96279C0.969962 4.06034 1.00732 4.15413 1.0744 4.2234L2.36154 5.55332C2.49404 5.69 2.70937 5.6917 2.8439 5.55712C4.63174 3.81656 7.00425 2.84598 9.47105 2.84599ZM9.47103 7.17266C10.8262 7.17257 12.1331 7.68843 13.1377 8.61999C13.2735 8.7522 13.4876 8.74933 13.62 8.61353L14.9053 7.28361C14.973 7.21386 15.0105 7.11922 15.0096 7.02089C15.0086 6.92255 14.9691 6.82872 14.9001 6.76039C11.841 3.84629 7.10364 3.84629 4.04457 6.76039C3.97547 6.82872 3.93604 6.9226 3.93514 7.02097C3.93423 7.11933 3.97192 7.21396 4.03974 7.28361L5.32466 8.61353C5.4571 8.74933 5.67114 8.7522 5.80701 8.61999C6.8109 7.68905 8.11671 7.17323 9.47103 7.17266ZM12.0457 10.084C12.0476 10.1826 12.0098 10.2777 11.941 10.3468L9.71777 12.6445C9.6526 12.712 9.56374 12.75 9.47103 12.75C9.37831 12.75 9.28946 12.712 9.22429 12.6445L7.00064 10.3468C6.93195 10.2776 6.89416 10.1825 6.8962 10.0839C6.89823 9.98529 6.93992 9.89191 7.0114 9.82581C8.43127 8.59595 10.5108 8.59595 11.9307 9.82581C12.0021 9.89196 12.0437 9.98537 12.0457 10.084Z" fill="black"/>
-                </svg>                    
-                <!-- Battery -->
-                <svg class="topbar-stat" width="29" height="13" viewBox="0 0 29 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect class="topbar-statpath" opacity="0.4" x="1.47058" y="0.5" width="24" height="12" rx="3.5" stroke="black"/>
-                    <path class="topbar-statpath" opacity="0.5" d="M26.9706 4.5V8.5C27.7765 8.16122 28.3006 7.37313 28.3006 6.5C28.3006 5.62687 27.7765 4.83878 26.9706 4.5Z" fill="black"/>
-                    <rect class="topbar-statpath" x="2.97058" y="2" width="17" height="9" rx="2" fill="black"/>
-                </svg>                    
-            </div>
+    <div class="menu"></div>
+    <div class="homepg">
+        <div class="login-img">
+            <img src="{{url_for('static', filename='login-img1.svg')}}" id="login-img">
         </div>
-        <div class="mainpage">
-            <!-- If loggedin -->
-           {% if 'loggedin' in session or 'token' in session %}
-           <br>
-           <div class="display-nav">
-            <h3 class="display-head" id="display-head"> Home</h3>
-            <img src="{{url_for('static', filename='notif.svg')}}" class="display-img" id="dimg">
-           </div>
-           <!-- Power -->
-        <div class="home-loggedin">
-           <h1 class="home-powerex">213.43kW</h1>
-           <p class="home-powertxt">Current Power</p>
-           <img src="{{url_for('static', filename='powerbg.svg')}}" class="home-powerbg" alt="">
-           <div class="home-powerstats">
-                <div class="home-powerstat">
-                    <p class="powerstat-desc">Energy Stored</p>
-                    <div class="powerstat-stat">
-                        <p class="powerstat-statdesc">Total Energy Generated: 34.3kW</p>
-                        <p class="powerstat-statdesc">Available Storage : 23.1 kW</p>
-                        <p class="powerstat-statdesc">Average Energy Generated : 23.1 kW</p>
-                    </div>
-                    <div class="powerstat-repro">
-                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
-                        <p class="powerstat-percentage">80%</p>
-                    </div>
+        <div class="login">
+            <p class="login-txt">Login</p>
+            <img src="{{url_for('static', filename='logo-type.svg')}}" class="auth-img" alt="">
+            <p id="login-welcomeback">Welcome Back!</p>
+            <form action="" id="loginform" method="post" style="margin-top: 3em">
+                <input type="text" class="auth-input hoverable" name="login-email" placeholder="Email" id="login-username"><br>
+                <input type="password" class="auth-input hoverable" name="login-password" placeholder="Password" id="login-password"><br>
+                <input type="submit" class="auth-submit hoverable">
+            </form>
+            <br><br>
+            <p class="login-altauthtxt">OR</p>
+            <div class="altauth-container hoverable"> 
+                <div class="alternate-auth" style="margin-right: 1em">
+                    <img src="{{url_for('static', filename='googl.svg')}}" class="alternate-auth-vector" alt="">
+                    <p class="altauth-txt" id="google-auth">Google</p>
                 </div>
-                <div class="home-powerstat">
-                    <p class="powerstat-desc">Power Used</p>
-                    <div class="powerstat-stat">
-                        <p class="powerstat-statdesc">Today Power Consumed: 23.1 kW</p>
-                        <p class="powerstat-statdesc">Available Power : 23.1 kW</p>
-                        <p class="powerstat-statdesc">Average Generation : 23.1 kW</p>
-                    </div>
-                    <div class="powerstat-repro">
-                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
-                        <p class="powerstat-percentage">80%</p>
-                    </div>
+                <a href="{{OAUTH_URL}}">
+                <div class="alternate-auth hoverable">
+                    <img src="{{url_for('static', filename='discord.svg')}}" class="alternate-auth-vector" alt="">
+                    <p class="altauth-txt" id="discord-auth">Discord</p>
                 </div>
-                <div class="home-powerstat">
-                    <p class="powerstat-desc">Energy Stored</p>
-                    <div class="powerstat-stat">
-                        <p class="powerstat-statdesc">Battery Health: 100%</p>
-                        <p class="powerstat-statdesc">Sensor Health : 98%</p>
-                        <p class="powerstat-statdesc">Scheduled Repair : In 2 days</p>
-                    </div>
-                    <div class="powerstat-repro">
-                        <img src="{{url_for('static', filename='powerstat-bg.svg')}}" class="powestat-bg" alt="">
-                        <p class="powerstat-percentage">80%</p>
-                    </div>
-                </div>
-           </div>
+                </a>
+            </div>
+            <button id="goto-signup" class="hoverable">Sign Up</button>
         </div>
-        <div class="services">
-            <div class="services-search">
-                <p class="services-searchtxt">Search For a Service</p>
-                <img src="{{url_for('static', filename='search.svg')}}" class="services-searchimg" alt="">
-            </div>
-            <h3 class="services-title">Repairs</h3>
-            <div class="services-bigboi">
-                <div class="services-repair">
-                    <img src="{{url_for('static', filename='repairs-floor.png')}}" id="repair-floor" class="repairs-img" alt="">
-                    <p class="repairs-name">Floors</p>
+        <div class="signup">
+            <p class="login-txt">Sign Up</p>
+            <img src="{{url_for('static', filename='logo-type.svg')}}" class="auth-img" alt="">
+            <p id="login-welcomeback">Lets do this</p>
+            <form action="" id="signupform" method="post" style="margin-top: 3em">
+                <input type="text" class="auth-input hoverable" name="signup-name" placeholder="Name" id="signup-name"><br>
+                <input type="password" class="auth-input hoverable" name="signup-email" placeholder="Email" id="signup-email"><br>
+                <input type="text" class="auth-input hoverable" name="signup-password" placeholder="Password" id="signup-password"><br>
+                <input type="text" class="auth-input hoverable" name="signup-address" placeholder="Address" id="signup-address"><br>
+                <input type="submit" class="auth-submit hoverable">
+            </form>
+            <br><br>
+            <p class="login-altauthtxt">OR</p>
+            <div class="altauth-container hoverable"> 
+                <div class="alternate-auth" style="margin-right: 1em">
+                    <img src="{{url_for('static', filename='googl.svg')}}" class="alternate-auth-vector" alt="">
+                    <p class="altauth-txt" id="google-auth">Google</p>
                 </div>
-                <div class="services-repair" style="margin-left: 1em; margin-right:0.75em;">
-                    <img src="{{url_for('static', filename='repairs-sensor.png')}}" id="repair-sensors" class="repairs-img" alt="">
-                    <p class="repairs-name">Sensors</p>
-                </div>
-                <div class="services-repair" style="margin-left: 1em; margin-right:0.75em;">
-                    <img src="{{url_for('static', filename='repairs-battery.png')}}" id="repair-battery" class="repairs-img" alt="">
-                    <p class="repairs-name">Battery</p>
-                </div>
-                <div class="services-repair">
-                    <img src="{{url_for('static', filename='repairs-general.png')}}" id="repair-general" class="repairs-img" alt="">
-                    <p class="repairs-name">General</p>
-                </div>
-            </div>
-            <h3 class="services-title" style="margin-top: 0;">Services</h3>
-            <div class="services-bigboi">
-                <div class="services-repair">
-                    <img src="{{url_for('static', filename='smb.svg')}}" style="margin-right: 0;" id="subscription-sensorbattery" class="repairs-img" alt="">
-                </div>
-                <div class="services-repair" style="margin-left: 0; margin-right:1em;">
-                    <img src="{{url_for('static', filename='qfc.svg')}}" class="repairs-img" id="subscription-quaterlycheck" alt="">
-                </div>
-                <div class="services-repair" style="margin-left: 0.5em; margin-right:1.5em;">
-                    <img src="{{url_for('static', filename='mc.svg')}}" class="repairs-img" id="subscription-monthlycheck" alt="">
-                </div>
-            </div><br>
-            <h3 class="services-title" style="margin-top: 0;">Reviews</h3>
-            <div class="services-bigboi">
-                <div class="services-reviews">
-                    <img src="{{url_for('static', filename='review-img.png')}}" alt="" class="reviews-img">
-                    <div class="review-info">
-                    <h3 class="reviews-name">Xino Shreff</h3>
-                    <img src="{{url_for('static', filename='fivestar.svg')}}" class="review-star" alt="">
-                    </div>
-                    <p class="review-review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh pulvinar magnis neque, ac amet, consequat. Vivamus </p>
-                </div>
-                <div class="services-reviews">
-                    <img src="{{url_for('static', filename='review-img.png')}}" alt="" class="reviews-img">
-                    <div class="review-info">
-                    <h3 class="reviews-name">Xino Shreff</h3>
-                    <img src="{{url_for('static', filename='fivestar.svg')}}" class="review-star" alt="">
-                    </div>
-                    <p class="review-review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh pulvinar magnis neque, ac amet, consequat. Vivamus </p>
-                </div>
-                <div class="services-reviews">
-                    <img src="{{url_for('static', filename='review-img.png')}}" alt="" class="reviews-img">
-                    <div class="review-info">
-                    <h3 class="reviews-name">Xino Shreff</h3>
-                    <img src="{{url_for('static', filename='fivestar.svg')}}" class="review-star" alt="">
-                    </div>
-                    <p class="review-review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh pulvinar magnis neque, ac amet, consequat. Vivamus </p>
-                </div>
-                <div class="services-reviews">
-                    <img src="{{url_for('static', filename='review-img.png')}}" alt="" class="reviews-img">
-                    <div class="review-info">
-                    <h3 class="reviews-name">Xino Shreff</h3>
-                    <img src="{{url_for('static', filename='fivestar.svg')}}" class="review-star" alt="">
-                    </div>
-                    <p class="review-review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh pulvinar magnis neque, ac amet, consequat. Vivamus </p>
+                <div class="alternate-auth hoverable">
+                    <img src="{{url_for('static', filename='discord.svg')}}" class="alternate-auth-vector" alt="">
+                    <p class="altauth-txt" id="discord-auth">Discord</p>
                 </div>
             </div>
-            <br><br><br><br><br>
-            <!-- View on mobile if you cant scroll thru -->
-            <div class="product-floors">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Repair - Floors</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="1">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$23.47</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía flooring? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-sensors">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-sensor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Repair - Senors</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="2">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$34.24</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía sensors? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-battery">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-battery.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Repair - Battery</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="3">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$13.2</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía batteries? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-general">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-general.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Repair - General</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="4">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$45.93</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía product? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-sensorbattery">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Subscription - Sensor maintainence + Battery</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="8">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$45.34</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía flooring? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-monthlycheck">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Subscription - Monthly Check</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="9">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$38.5</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía flooring? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-quaterlycheck">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Subscription - Quaterly Flooring Checks</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="10">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$35.3</p>
-                <br><br>
-                <p class="product-desc">
-                    Having troubles with your exousía flooring? Book a repair now to get it checked and fixed. Repairs are chargable if outside the 5 year exousía warranty :)
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-        </div> 
-        <div class="buy">
-            <!-- filter: drop-shadow(0px 137px 55px rgba(0, 0, 0, 0.01)) drop-shadow(0px 77px 46px rgba(0, 0, 0, 0.05)) drop-shadow(0px 34px 34px rgba(0, 0, 0, 0.09)) drop-shadow(0px 9px 19px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1)); -->
-            <div class="buy-caro">
-                <img src="{{url_for('static', filename='buy-gr.png')}}" class="buy-img"  id=""alt="">
-                <img src="{{url_for('static', filename='buy-gr.png')}}" class="buy-img buy-active" id="buy-grass" alt="">
-                <img src="{{url_for('static', filename='buy-gr.png')}}" class="buy-img" id="" alt="">
-            </div>
-            <center>
-                <h2 class="so-buy">Special Offers</h2>
-                <div class="so-offer" id="buy-tiles">
-                    <img src="{{url_for('static', filename='so-dt.png')}}" class="so-img" alt="">
-                    <h3 class="so-title">Designer Tiles</h3>
-                    <p class="so-txt">Get these amazing tiles to go along with Exousia.</p>
-                </div>
-                <br><br>
-                <div class="so-offer" id="buy-smoothewood">
-                    <img src="{{url_for('static', filename='buy-dt.png')}}" class="so-img" alt="">
-                    <h3 class="so-title">Smoothe Wood</h3>
-                    <p class="so-txt">Elegant wooden finish to go with Exousia.</p>
-                </div>
-                <br><br>
-                <br><br>
-                <br><br>                
-            </center>
-            <div class="product-tiles">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Designer Tiles</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="5">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$110.69</p>
-                <br><br>
-                <p class="product-desc">
-                    High end, xquisite designer tiles for your equally elegant house to give you a luxury finish as well as power. Made from marbel. All exousía products come with 5 year international warranty so you dont have to worry about it going wrong.
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-grassrange">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Grass Range</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="6">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$69.42</p>
-                <br><br>
-                <p class="product-desc">
-                    Need artificial grass that gives you power?(literally). Buy exousía's grass range for the touch of grass. All exousía products come with 5 year international warranty so you dont have to worry about it going wrong.
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-            <div class="product-smoothewood">
-                <center style="margin-top: 7em;">
-                <img src="{{url_for('static', filename='repairs-floor.png')}}" alt="">
-                <h2 style="margin-block-end: 0;">Smoothe Wood</h2>
-                <form style="display: inline;" action="" method="post">
-                    <input type="text" name="cart-productid" style="display: none;"" value="7">
-                    <input type="submit" class="product-atc" style="background: none;border: none; outline: none;" value="Add to Cart">
-                </form>
-                <p class="product-price">$90.4</p>
-                <br><br>
-                <p class="product-desc">
-                    Elegant smooth wood finish, This product comes with no-termite and anti-pest guarentee. Covers all your flooring with extraordinary look. All exousía products come with 5 year international warranty so you dont have to worry about it going wrong.
-                </p>
-                </center>
-                <p class="back">Back</p>
-            </div>
-        </div>
-        <div class="updates">
-            <div class="updates-avg"><br>
-                <p class="avg-title">Daily Average</p>
-                <p class="avg-val">35.47KW</p>
-                <br>
-                <center><img src="{{url_for('static', filename='avg.png')}}" class="avg-img" alt=""></center><br>
-                <div class="pwr-summary">
-                    <img src="{{url_for('static', filename='asset69420.svg')}}" class="pwr-img" alt="">
-                    <p class="pwr-title">Power Summary <span style="margin-left: 2em; font-size: 1.6em; vertical-align: middle;">></span></p>
-                </div>
-            </div>
-            <div class="updates-energy">
-                <center>
-                    <img src="{{url_for('static', filename='bijlee.svg')}}" class="energy-img" alt=""><br>
-                    <p class="energy-title">Energy Consumption Today</p>
-                    <p class="energy-val">23kW</p>
-                </center>
-            </div>
-        </div>
-        <div class="profile">
-            <p class="profile-nick">{{details['nickname']}}'s HQ</p>
-            <div class="profile-btn" id="to-system">
-                <p class="profile-title">System</p>
-            </div>
-            <div class="profile-btn" id="to-support">
-                <p class="profile-title">Support</p>
-            </div>
-            <div class="profile-btn" id="to-account">
-                <p class="profile-title">Account</p>
-            </div>
-            <div class="profile-btn" id="to-settings">
-                <p class="profile-title">Settings</p>
-            </div>
-            <div class="profile-btn" id="to-appinfo">
-                <p class="profile-title">App Information</p>
-            </div>
-            <div class="profile-btn" id="to-manual">
-                <p class="profile-title">User Manual</p>
-            </div>
-            <div class="profile-system">
-                <p class="profile-nick sys-title">< Account info</p>
-                <p id="mogus"></p>
-            </div>
-            <div class="profile-account">
-                <p class="profile-nick sys-title" style="margin-block-end: 0; margin-bottom: 0; margin-top: 5em;">< System info</p>
-                <form action="" class="signup-form" method="post" style="margin-top: 1em;">
-                    <label for="">Name</label>
-                    <input type="text" name="acc-name" value="{{details['name']}}" placeholder="Add Name" class="su-input" id=""><br><br>
-                    <label for="">Email (Not editable)</label>
-                    <input type="text" name="acc-email" readonly value="{{details['email']}}" class="su-input" id=""><br><br>
-                    <label for="">Password</label>
-                    <input type="text" name="acc-password" value="{{details['password']}}" class="su-input" id=""><br><br>
-                    <label for="">Discord ID (Not editable)</label>
-                    <input type="text" readonly required name="acc-discordid" value="{{details['discordid']}}" class="su-input" id=""><br><br>
-                    <label for="">Nickname (Not editable)</label>
-                    <input type="text" readonly required name="acc-nick" value="{{details['nickname']}}" class="su-input" id=""><br><br>
-                    <center><input type="submit" value="Update" class="su-submit"></center>
-                </form>
-            </div>
-            <center><img src="{{url_for('static', filename='logo.svg')}}" style="max-width: 5em; margin-top: 2em; filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.426)); padding: 1em 1em 1em 1em;" id="acccc-img" alt=""></center>
-        </div>
-        <div class="cart">
-            <h1 style="margin-top: 5em; margin-left: 2em; font-size: 1.4em; font-weight: 500; cursor: pointer;" class="back2">< Cart</h1>
-            {% for product in products %}
-            <center><div class="cartitem">
-                <p class="productname">{{product[0]}}<span class="cartcost">${{product[1]}}</span></p>
-            </div>
-             {% endfor %}
-             <div class="cart-address">
-                <div class="cart-top">
-                <img src="{{url_for('static', filename='location.svg')}}" class="cart-location" alt="">
-                <p class="address-title">Address</p>
-                </div>
-                <br>
-                <h4 class="adres">234, lorem ipsum street, Xino City</h4>
-                <img src="{{url_for('static', filename='edit.svg')}}" class="adres-edit" alt="">
-             </div>
-             <div class="cart-address">
-                <div class="cart-top">
-                    <img src="{{url_for('static', filename='tag.svg')}}" class="cart-location" alt="">
-                    <p class="address-title">Apply Coupon</p>
-                </div>
-                <p style="margin-left: 1em;">___________________</p>
-            </div>
-            <div class="cart-address">
-                <div class="cart-top">
-                    <p class="address-title">Detailed Bill</p>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="details">                    
-                    <p class="cart-db">Sub Total <span class="cart-span">XXX</span></p>
-                    <p class="cart-db">Taxes <span class="cart-span">XXX</span></p>
-                    <p class="cart-db">Discount <span class="cart-span">XXX</span></p>
-                </div>
-                <hr>
-                <div class="details">                    
-                <p class="cart-db" style="font-weight: 600;">Total <span class="cart-span">XXX</span></p>
-                </div>
-            </div>
-            <center>
-            <div class="cart-pay">
-                <p style="font-weight: 800; margin-left: 1em; display: inline; vertical-align: middle;">Rs. XXX</p>
-                <button class="mogus to-complete">Proceed to pay</button>
-            </div>
-            </center>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-             </div>
-            </center>
-            <div class="confirmed">
-                <center><img src="{{url_for('static', filename='confirmed.png')}}" style="max-width: 15em; margin-top:4em;" alt="">
-                <h1 style="margin-top: -3.5em;">Confirmed</h1>
-                <p style="margin-left: 3em; margin-right: 3em; color: grey; font-weight: 600;">Your booking has been confirmed for, <strong>28 August 2022</strong> .
-<br><br>
-                    You will get a confirmation email with details shorty .</p>
-                    <br>
-                    <h3>4:00PM - Sunday</h3>
-                    <br><br>
-                        <p class="to-home" style="font-weight: 900; padding: 1em 5em 1em 5em; background-color: #00FFB2; border-radius: 0.7em; margin-left: 2em; margin-right: 2em; filter: drop-shadow(0px 153px 61px rgba(0, 0, 0, 0.01)) drop-shadow(0px 86px 52px rgba(0, 0, 0, 0.05)) drop-shadow(0px 38px 38px rgba(0, 0, 0, 0.09)) drop-shadow(0px 10px 21px rgba(0, 0, 0, 0.1)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.1));">Back to Home</p>
-                </center>
-            </div>
-        </div>
-           <div class="nav">
-                <div class="navmain">
-                    <img src="{{url_for('static', filename='home.svg')}}" class="navlink to-home" alt="">
-                    <img src="{{url_for('static', filename='services.svg')}}" class="navlink to-services" alt="">
-                    <img src="{{url_for('static', filename='buy.svg')}}" class="navlink2 to-buy" alt="">
-                    <img src="{{url_for('static', filename='account.svg')}}" style="float: right; margin-right: 0;" class="navlink to-profile" alt="">
-                    <img src="{{url_for('static', filename='updates.svg')}}" style="float: right;" class="navlink to-updates" alt="">
-                </div>
-           </div>
-           <!-- If not loggedin -->
-           {% else %}
-           <div class="nloggedin-home">
-           <img src="{{url_for('static', filename='logo2.svg')}}" style="pointer-events: none; user-select: none;-webkit-user-drag: none; position: absolute; left: 50%; transform: translateX(-50%); top: 0; width: 25em; margin-top: -3em;" alt="">
-           <div class="nloggedin-main">
-            <center><h3 style="color:#00FFB2; margin-top: 6em;">ENERGY ON THE GO</h3><br>
-                <button class="get-started to-signup">Get Started</button>
-                <h5 style="color: white;" class="to-login">Already have an account? <span style="color: #00FFB2; cursor: pointer;">Log In</span></h5>
-            </center>
-           </div>
-           </div>
-           {% endif %}
-            <!-- Signup/login -->
-            <div class="signup" id="signup">
-                <button class="backbtn to-home"><img src="{{url_for('static', filename='chevron_right.svg')}}"></button>
-                <h1 class="su-head">SIGN UP</h1>
-                <form action="" class="signup-form" method="post">
-                    <label for="su-name">Name</label><br>
-                    <input type="text" required name="su-name" placeholder="Enter your name" class="su-input" id=""><br><br>
-                    <label for="su-password">Password</label><br>
-                    <input type="password" required name="su-password" placeholder="Pick a strong password" class="su-input" id=""><br><br>
-                    <label for="su-email">Email</label><br>
-                    <input type="text" required name="su-email" placeholder="admin@exousía.com" class="su-input" id=""><br><br>
-                    <label for="su-nick">Nickname</label><br>
-                    <input type="text" required name="su-nick" placeholder="Choose your nickname" class="su-input" id=""><br><br>
-                    <input type="submit" value="Sign Up" class="su-submit">
-                </form>
-                <center><h2>OR</h2>
-                <div class="su-authlogin">
-                    <!-- <button class="authbtn customGPlusSignIn" data-onsuccess="onSignIn" id="auth-google gSignInWrapper"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button> -->
-                    <button class="authbtn" onclick="iTried()" id="auth-google"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button>
-                    <a href="{{oauth_url}}"><button class="authbtn" id="auth-discord" style="margin-right:0;"><img src="{{url_for('static', filename='discord.svg')}}" alt=""></button></a>
-                </div>
-                <h5 style="margin-top: 0.5em; margin-block-end: 0;">Already have an account? <span style="color: #00FFB2; cursor: pointer;">Log In</span></h5>
-            </center>
-            </div>
-            <!-- Login -->
-            <div class="login" id="login">
-                <button class="backbtn to-home"><img src="{{url_for('static', filename='chevron_right.svg')}}"></button>
-                <h1 class="su-head">LOG IN</h1>
-                <form action="" class="signup-form" method="post">
-                    <label for="lo-email">Email</label><br>
-                    <input type="text" required name="lo-email" placeholder="admin@exousía.com" class="su-input" id=""><br><br>
-                    <label for="lo-password">Password</label><br>
-                    <input type="password" required name="lo-password" placeholder="Enter password" class="su-input" id=""><br><br>
-                    <input type="submit" value="Submit.." class="su-submit">
-                </form>
-                <center><h2>OR</h2>
-                <div class="su-authlogin">
-                    <!-- <button class="authbtn customGPlusSignIn" data-onsuccess="onSignIn" id="auth-google gSignInWrapper"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button> -->
-                    <button class="authbtn" onclick="iTried()" id="auth-google"><img src="{{url_for('static', filename='google.svg')}}" alt=""></button>
-                    <a href="{{oauth_url}}"><button class="authbtn" id="auth-discord" style="margin-right:0;"><img src="{{url_for('static', filename='discord.svg')}}" alt=""></button></a>
-                </div>
-                <h5>Dont have an account? <span style="color: rgb(1, 195, 1); cursor: pointer;">Sign Up</span></h5>
-            </center>
-            </div>
+            <button id="goto-login" class="hoverable">Log In</button>
         </div>
     </div>
+    <div class="cursor">
+            
+        <div class="cursor__ball cursor__ball--big ">
+            <svg height="30" width="30">
+              <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+            </svg>
+          </div>
+        <div class="cursor__ball cursor__ball--small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+      </div>
 </body>
-</html>
-<!-- Scripts -->
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous">
-</script>
-<script
-  src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
-  integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
-  crossorigin="anonymous"></script>
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="/static/main.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+</html><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js" integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="{{url_for('static', filename='main.js')}}"></script>
